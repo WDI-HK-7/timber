@@ -60,6 +60,7 @@ Rails.application.routes.draw do
 
 # get '/', to: 'controller_names#action_name'
 # root 'controller_names#action_name'
-root 'static_pages#index'
-
+  root 'static_pages#index'
+  resources :posts
+  
 end
