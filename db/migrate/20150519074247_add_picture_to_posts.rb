@@ -1,11 +1,11 @@
 class AddPictureToPosts < ActiveRecord::Migration
 
-	def up
-		add_attachment :posts, :picture 
-	end
+  def up
+    add_attachment :posts, :picture 
+  end
 
   def down
-  	remove_attachment :posts, :picture
+    remove_attachment :posts, :picture
   end
 
 end
