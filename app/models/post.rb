@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  # belongs_to :user
+  belongs_to :user
 
   # #paperclip syntax. > is more syntax
 
