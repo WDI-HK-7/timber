@@ -6,6 +6,10 @@ gem 'rails', '4.2.1'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.0'
 # Use postgresql as the database
+
+# User Management System
+gem 'devise'
+
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
