@@ -1,0 +1,15 @@
+app.controller('SignOutCtrl',['$scope', '$http', '$location', function($scope, $http, $location){
+
+  $scope.form = {};
+  $scope.user = {};
+
+  $scope.user.logout = function(){
+
+    var url = "<%= ENV['URL'] %>"||"http://localhost:3000/";
+  
+    $http.delete(url+"users/sign_out.json").success(function(response){
+      console.log(response);
+      $location.path('/');
+    });
+  };
+}]);

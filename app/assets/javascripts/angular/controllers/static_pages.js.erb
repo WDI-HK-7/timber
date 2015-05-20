@@ -1,0 +1,12 @@
+app.controller('StaticPagesCtrl',['$scope', '$http', '$location', function($scope, $http, $location){
+
+  var url = "<%= ENV['URL'] %>"||"http://localhost:3000/";
+
+  $http.get(url+'/authenticated').success(function(response){
+    if (response==null) {
+      console.log("not logged in");
+    } else {
+      $location.path('/browse');
+    }
+  })
+}]);

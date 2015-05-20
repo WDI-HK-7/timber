@@ -1,0 +1,19 @@
+app.controller('SignUpCtrl',['$scope', '$http', '$location', function($scope, $http, $location){
+  console.log("Bang! SignUP");
+  
+  $scope.form = {};
+  $scope.user = {};
+
+  $scope.form.submit = function(){
+
+    var url = "<%= ENV['URL'] %>"||"http://localhost:3000/";
+    var data = {
+      user: $scope.user
+    };
+    $http.post(url+"users.json",data).success(function(response){
+      console.log(response);
+      console.log("Bang! SignUP");
+      // $location.path('/swipe');
+    });
+  };
+}]);

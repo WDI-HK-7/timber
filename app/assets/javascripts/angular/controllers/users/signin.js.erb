@@ -1,0 +1,17 @@
+app.controller('SignInCtrl',['$scope', '$http', '$location', function($scope, $http, $location){
+  $scope.form = {};
+  $scope.user = {};
+
+  $scope.form.submit = function(){
+
+    var url = "<%= ENV['URL'] %>"||"http://localhost:3000/";
+    var data = {
+      user: $scope.user
+    };
+    $http.post(url+"users/sign_in.json",data).success(function(response){
+      console.log(response);
+      console.log("Bang singin!");
+      $location.path('/browse');
+    });
+  };
+}]);
