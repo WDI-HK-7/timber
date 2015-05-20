@@ -8,7 +8,7 @@ app.controller('SignInCtrl',['$scope', '$http', '$location', function($scope, $h
     var data = {
       user: $scope.user
     };
-    $http.post(url+"users/sign_in.json",data).success(function(response){
+    $http.post(url+"users/sign_in.json", data).success(function(response){
       console.log(response);
       console.log("Bang singin!");
       $location.path('/browse');
