@@ -9,8 +9,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   respond_to :json
-  def create
 
+  def create
     user = User.new(sign_up_params)
     if user.save
       render :json => user.as_json(:email => user.email), :status => 201
@@ -20,6 +20,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :json => user.errors, :status=>422
     end
   end
+  
   # def create
   #   super
   # end
