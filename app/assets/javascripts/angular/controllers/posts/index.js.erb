@@ -1,0 +1,15 @@
+app.controller('PostCtrl',['$scope', '$http', '$location', function($scope, $http, $location) {
+
+  $scope.form = {};
+  var url = "<%= ENV['URL'] %>" || "http://localhost:3000/";
+  
+  $http.get(url + 'posts').success(function(response){
+    console.log(response)
+
+    $scope.posts = response;
+
+    $scope.form.create = function(index){
+      console.log($scope.posts);
+    }
+  });
+}]);

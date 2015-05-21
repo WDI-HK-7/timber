@@ -1,0 +1,32 @@
+
+
+<div class="container-fluid">
+  <div class="row">
+
+<!-- what is ng-repeat? 
+$super.posts =[1,2,3]
+the "post" in "post in posts" refers to the "post" in {{post}}, and the "posts" in "post in posts" refers to the "posts" in $super.posts.
+ -->
+
+<!-- track by index means not all the input boxes will be data-binded together. track by index assigns a key. But also have to databind comment to each post. instead of new_comment.content, do post in posts...-->
+
+    <div ng-repeat="post in posts track by $index">
+
+    <img ng-src="{{ post.picture }}" class="col-xs-12">
+
+
+      <div class="page-header">
+      Title:  {{ post.title }}
+      Content:  {{ post.content }}
+      <!-- Category  {{ post.category }} -->
+        <small>
+          {{ post.created_at | date }}
+        </small>
+      </div>		  
+    </div>
+  </div>
+</div>
+
+
+
+  
