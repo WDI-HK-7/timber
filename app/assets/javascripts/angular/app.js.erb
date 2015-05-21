@@ -23,6 +23,14 @@ app.config(['$routeProvider', function($routeProvider){
     templateUrl: "<%= asset_path('posts/new.html') %>",
     controller: 'PostNewCtrl'
   }).
+  when('/mymatches', {
+    templateUrl: "<%= asset_path('likes/mymatches.html') %>",
+    controller: 'PostNewCtrl'
+  }).
+  when('/mytrades', {
+    templateUrl: "<%= asset_path('likes/mytrades.html') %>",
+    controller: 'PostNewCtrl'
+  }).
   when('/posts/:id', {
     templateUrl: "<%= asset_path('posts/show.html') %>",
     controller: 'PostShowCtrl'

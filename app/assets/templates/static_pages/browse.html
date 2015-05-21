@@ -12,7 +12,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="./">Browse<span class="sr-only">(current)</span></a></li>
-        <li><a href="../new.html">My Items</a></li>
+        <li><a href="../posts/new.html">My Items</a></li>
         <li><a href="../navbar-fixed-top/">My Matches</a></li>
         <li><a href="../navbar-fixed-top/">My Trades</a></li>
         <li class="dropdown-menu-class">
@@ -39,10 +39,10 @@
     <div class= "col-sm-2">
     </div>
     <div class="polaroid col-sm-8"> 
-      <figure> 
-        <img ng-src="assets/Items/Fancy1.jpg" class="img-responsive">
-        <figcaption>Item Owner</figcaption> 
-        <figcaption>Item Name</figcaption> 
+      <figure ng-controller="RandomShowCtrl"> 
+        <img ng-src="{{post.picture}}">
+        <figcaption>{{ post.user_id }}</figcaption> 
+        <figcaption>{{ post.title }}</figcaption>
       </figure>
       <div class= "col-sm-2">
       </div>
