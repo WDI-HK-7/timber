@@ -1,0 +1,18 @@
+
+<div class="container">
+	<div class="row">
+		<h1> Create a new postx</h1>
+
+<!-- form.submit takes you back to login.js.erb. It runs everytime you ng-submit -->
+
+		<form ng-submit="form.create()">
+			<input type="text" placeholder="type your message here..." ng-model="post.title">
+			<input type="text" placeholder="type your content here..." ng-model="post.content">
+			<!-- <input type="text" placeholder="type your category here..." ng-model="post.category"> -->
+			
+			<button class="btn btn-default" ngf-select ng-model="picture.files">Upload</button>
+			<!-- input type submit would create a button -->
+			<input type="submit">
+		</form>
+	</div>
+</div>

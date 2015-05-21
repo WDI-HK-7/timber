@@ -53,6 +53,8 @@ GEM
     bower (0.0.5)
       multi_json
     builder (3.2.2)
+    byebug (4.0.5)
+      columnize (= 0.9.0)
     callsite (0.0.11)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -66,6 +68,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    columnize (0.9.0)
     debug_inspector (0.0.2)
     devise (3.4.1)
       bcrypt (~> 3.0)
@@ -113,6 +116,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.1.0)
+      byebug (~> 4.0)
+      pry (~> 0.10)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     rack (1.6.1)
@@ -192,6 +198,7 @@ DEPENDENCIES
   meta_request
   paperclip
   pg
+  pry-byebug
   pry-rails
   rails (= 4.2.1)
   rails_12factor
