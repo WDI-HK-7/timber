@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   # root 'controller_names#action_name'
   root 'static_pages#index'
   
-  get 'posts/random'        => 'posts#random'
-  get 'posts/user/:user_id' => 'posts#user_post'  
+  get 'posts/random(/:id)'  => 'posts#random'
+  # get 'posts/user/:user_id' => 'posts#user_post'  
+   get 'posts/user' => 'posts#user_post'  
   resources :posts , except: [:new, :edit] 
   
   # Generates automatically

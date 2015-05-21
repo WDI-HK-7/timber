@@ -2,10 +2,21 @@ app.controller('RandomShowCtrl',['$scope', '$http', '$location', function($scope
 
   var url = "<%= ENV['URL'] %>" || "http://localhost:3000/";
 
+  $scope.post = {};
 
-  $http.get(url + 'posts').success(function(response){
-    $scope.post = response;
-    console.log($scope.post);
-  });
+  $scope.cross = function() {
+    newUrl = url + 'posts/random';
+
+    if ($scope.post.id !== undefined) {
+      newUrl + '/' + $scope.post.id;
+    }
+
+    $http.get(newUrl).success(function(response){
+      $scope.post = response;
+      console.log(response.title)
+    });
+  };
+
+  $scope.cross();
 
 }]);
