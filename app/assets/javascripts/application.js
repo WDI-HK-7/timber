@@ -15,3 +15,6 @@
 //= require angular/angular
 //= require angular-route/angular-route
 //= require_tree .
+
+//=require ng-file-upload/ng-file-upload
+//=require ng-file-upload/ng-file-upload-shim
