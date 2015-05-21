@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('rails-timber',['ngRoute', 'ngFileUpload']);
+var app = angular.module('rails-timber',['ngRoute', 'ui.bootstrap', 'ngFileUpload', 'picardy.fontawesome']);
 
 app.config(['$routeProvider', function($routeProvider){
   $routeProvider.
@@ -12,14 +12,23 @@ app.config(['$routeProvider', function($routeProvider){
   when('/browse', {
     //asset_path enables routes to direct us from /index.html to new compressed path (something 16-based)
     templateUrl: "<%= asset_path('static_pages/browse.html') %>",
-    controller: "SignOutCtrl"
+    controller: "RandomShowCtrl"
   }).  
   when('/posts', {
     templateUrl: "<%= asset_path('posts/index.html') %>",
     controller: 'PostCtrl'
   }).
-  when('/new_posts', {
+
+  when('/myitems', {
     templateUrl: "<%= asset_path('posts/new.html') %>",
+    controller: 'PostNewCtrl'
+  }).
+  when('/mymatches', {
+    templateUrl: "<%= asset_path('likes/mymatches.html') %>",
+    controller: 'PostNewCtrl'
+  }).
+  when('/mytrades', {
+    templateUrl: "<%= asset_path('likes/mytrades.html') %>",
     controller: 'PostNewCtrl'
   }).
   when('/posts/:id', {

@@ -1,11 +1,11 @@
-app.controller('RandomShowCtrl',['$scope', '$http', '$location', '$routeParams', function($scope, $http, $location, $routeParams) {
+app.controller('RandomShowCtrl',['$scope', '$http', '$location', function($scope, $http, $location) {
 
   var url = "<%= ENV['URL'] %>" || "http://localhost:3000/";
-  
-  console.log($routeParams.id);
 
-  $http.get(url + 'posts/' + $routeParams.id).success(function(response){
+
+  $http.get(url + 'posts').success(function(response){
     $scope.post = response;
+    console.log($scope.post);
   });
 
 }]);
