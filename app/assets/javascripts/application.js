@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require angular/angular
 //= require angular-route/angular-route
+//= require angular-bootstrap/ui-bootstrap
+//= require angular-fontawesome/dist/angular-fontawesome
 //= require_tree .
 
 //=require ng-file-upload/ng-file-upload
