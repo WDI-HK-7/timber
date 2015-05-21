@@ -1,8 +1,5 @@
 app.controller('RandomShowCtrl',['$scope', '$http', '$location', '$routeParams', function($scope, $http, $location, $routeParams) {
 
-  // $scope.form = {};
-  // $scope.post = {};
-
   var url = "<%= ENV['URL'] %>" || "http://localhost:3000/";
   
   console.log($routeParams.id);
