@@ -2,28 +2,10 @@ app.controller('UserPostCtrl',['$scope', '$http', '$location', '$routeParams', f
 
   var url = "<%= ENV['URL'] %>" || "http://localhost:3000/";
   
-  console.log($routeParams.id);
+  console.log($routeParams.user_id);
 
-  $http.get(url + $routeParams.id + 'posts' ).success(function(response){
+  $http.get(url + $routeParams.user_id + 'posts').success(function(response){
     $scope.post = response;
   });
 
-}]);
-
-
-app.controller('PostCtrl',['$scope', '$http', '$location', function($scope, $http, $location) {
-
-  $scope.form = {};
-  // $scope.user = {};
-  var url = "<%= ENV['URL'] %>" || "http://localhost:3000/";
-  
-  $http.get(url + 'posts').success(function(response){
-    console.log(response)
-
-    $scope.posts = response;
-
-    $scope.form.create = function(index){
-      console.log($scope.posts);
-    }
-  });
 }]);
