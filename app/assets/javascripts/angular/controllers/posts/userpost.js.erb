@@ -17,27 +17,13 @@ app.controller('PostCtrl',['$scope', '$http', '$location', function($scope, $htt
   // $scope.user = {};
   var url = "<%= ENV['URL'] %>" || "http://localhost:3000/";
   
-    $http.get(url + 'posts').success(function(response){
-      console.log(response)
+  $http.get(url + 'posts').success(function(response){
+    console.log(response)
 
-      $scope.posts = response;
+    $scope.posts = response;
 
-      $scope.form.create = function(index){
-        console.log($scope.posts);
-        $scope.posts[index]
-
-      //  var data = {
-      //    comment: {
-      //      content: $scope.posts[index].new_comment.content,
-      //      post_id: $scope.posts[index].id
-      //    }
-      //  }
-
-      //  $http.post(url + 'comments', data).success(function(response){
-      //    console.log(response);
-      //    $scope.posts[index].comments.push(data);
-          // $scope.posts[index].new_comment.content ="";
-      //  });
-      }
-    });
+    $scope.form.create = function(index){
+      console.log($scope.posts);
+    }
+  });
 }]);
