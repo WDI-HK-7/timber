@@ -1,18 +1,49 @@
 
-<div class="container">
-  <div class="row">
-    <h1> Create a new postx</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <form ng-submit="form.create()">
+          <h1> New Items Upload</h1>
+          <input type="text" class="new-item"placeholder="item name" ng-model="post.title"><br>
+          <input type="text" class="new-item"placeholder="item description" ng-model="post.content"><br>
+          <button class="btn btn-default new-item"ngf-select ng-model="picture.files">Upload Item Photo</button>
+          <input type="submit" class="new-item">
+        </form>
+        <hr>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
 
-<!-- form.submit takes you back to login.js.erb. It runs everytime you ng-submit -->
-
-    <form ng-submit="form.create()">
-      <input type="text" placeholder="type your message here..." ng-model="post.title">
-      <input type="text" placeholder="type your content here..." ng-model="post.content">
-      <!-- <input type="text" placeholder="type your category here..." ng-model="post.category"> -->
-      
-      <button class="btn btn-default" ngf-select ng-model="picture.files">Upload</button>
-      <!-- input type submit would create a button -->
-      <input type="submit">
-    </form>
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="wrap col-sm-8">
+        <div class="box">
+          <div class="boxInner">
+            <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/7.jpg">
+            <div class="titleBox">Butterfly</div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="boxInner">
+            <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/1.jpg">
+            <div class="titleBox">An old greenhouse</div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="boxInner">
+            <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/2.jpg">
+            <div class="titleBox">Purple wildflowers</div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="boxInner">
+            <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/3.jpg">
+            <div class="titleBox">A birdfeeder</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2"></div>
+      </div>
+    </div>
   </div>
-</div>
