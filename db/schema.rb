@@ -16,13 +16,15 @@ ActiveRecord::Schema.define(version: 20150521134527) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "likes", id: false, force: :cascade do |t|
+  create_table "likes", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "owner_id"
     t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "likes", ["owner_id"], name: "index_likes_on_owner_id", using: :btree
   add_index "likes", ["post_id"], name: "index_likes_on_post_id", using: :btree
   add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
