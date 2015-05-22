@@ -10,7 +10,7 @@ app.controller('SignUpCtrl',['$scope', '$http', '$location', function($scope, $h
     var data = {
       user: $scope.user
     };
-    $http.post(url+"users.json",data).success(function(response){
+    $http.post(url+ "users/sign_up.json", data).success(function(response){
       console.log(response);
       console.log("Bang! SignUP");
       // $location.path('/swipe');
