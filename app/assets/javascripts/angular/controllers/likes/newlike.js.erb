@@ -1,0 +1,18 @@
+app.controller('NewLikeCtrl',['$scope', '$http', '$location', function($scope, $http, $location) {
+
+  var url = "<%= ENV['URL'] %>" || "http://localhost:3000/";
+
+
+  $scope.tick = function() {
+
+    // newUrl = url + 'posts/' + $routeParams.id + '/likes';
+
+    // $http.post(newUrl).success(function(response){
+    //   $scope.post = response;
+    //   console.log("hello-liked");
+    // });
+  };
+
+  $scope.tick();
+
+}]);

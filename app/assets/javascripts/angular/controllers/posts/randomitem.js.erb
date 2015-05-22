@@ -5,6 +5,7 @@ app.controller('RandomShowCtrl',['$scope', '$http', '$location', function($scope
   $scope.post = {};
 
   $scope.cross = function() {
+    console.log("crossss");
     newUrl = url + 'posts/random';
 
     if ($scope.post.id !== undefined) {
@@ -13,10 +14,21 @@ app.controller('RandomShowCtrl',['$scope', '$http', '$location', function($scope
 
     $http.get(newUrl).success(function(response){
       $scope.post = response;
-      console.log(response.title)
+      console.log(response);
     });
   };
 
   $scope.cross();
+
+  $scope.tick = function() {
+
+    console.log("tickkkkkk");
+    newUrl = url + 'posts/' + $scope.post.id + '/likes';
+
+    $http.post(newUrl).success(function(response){
+      $scope.post = response;
+      console.log(response);
+    });
+  };
 
 }]);

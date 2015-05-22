@@ -15,6 +15,7 @@
 //= require angular/angular
 //= require angular-route/angular-route
 //= require angular-bootstrap/ui-bootstrap
+//= require angular-bootstrap/ui-bootstrap-tpls
 //= require angular-fontawesome/dist/angular-fontawesome
 //= require_tree .
 
