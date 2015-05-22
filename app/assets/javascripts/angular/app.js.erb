@@ -13,7 +13,7 @@ app.config(['$routeProvider', function($routeProvider){
     //asset_path enables routes to direct us from /index.html to new compressed path (something 16-based)
     templateUrl: "<%= asset_path('static_pages/browse.html') %>",
     controller: "RandomShowCtrl"
-  }).  
+  }).
   when('/posts', {
     templateUrl: "<%= asset_path('posts/index.html') %>",
     controller: 'PostCtrl'
@@ -34,5 +34,5 @@ app.config(['$routeProvider', function($routeProvider){
   when('/posts/:id', {
     templateUrl: "<%= asset_path('posts/show.html') %>",
     controller: 'PostShowCtrl'
-  }).
+  })
 }]);
