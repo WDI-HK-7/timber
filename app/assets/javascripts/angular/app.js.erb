@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('rails-timber',['ngRoute', 'ui.bootstrap', 'ngFileUpload', 'picardy.fontawesome']);
+var app = angular.module('rails-timber',['ngRoute', 'ui.bootstrap', 'ui.bootstrap.modal', 'ngFileUpload', 'picardy.fontawesome']);
 
 app.config(['$routeProvider', function($routeProvider){
   $routeProvider.
@@ -29,9 +29,10 @@ app.config(['$routeProvider', function($routeProvider){
   when('/mytrades', {
     templateUrl: "<%= asset_path('likes/mytrades.html') %>",
     controller: 'PostNewCtrl'
-  }).
-  when('/posts/:id', {
-    templateUrl: "<%= asset_path('posts/show.html') %>",
-    controller: 'PostShowCtrl'
   })
+
+  // when('/posts/:id', {
+  //   templateUrl: "<%= asset_path('posts/show.html') %>",
+  //   controller: 'PostShowCtrl'
+  // })
 }]);
