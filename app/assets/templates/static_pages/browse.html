@@ -11,10 +11,10 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="./">Browse<span class="sr-only">(current)</span></a></li>
-        <li><a href="../posts/new.html">My Items</a></li>
-        <li><a href="../navbar-fixed-top/">My Matches</a></li>
-        <li><a href="../navbar-fixed-top/">My Trades</a></li>
+        <li class="active"><a href="/#/browse">Browse<span class="sr-only">(current)</span></a></li>
+        <li><a href="/#/myitems">My Items</a></li>
+        <li><a href="/#/mymatches">My Matches</a></li>
+        <li><a href="/#/mytrades">My Trades</a></li>
         <li class="dropdown-menu-class">
           <div ng-controller="DropdownCtrl">
             <div class="btn-group" dropdown is-open="status.isopen">
@@ -30,33 +30,25 @@
           </div>
         </li>
       </ul>
-    </div><!--/.nav-collapse -->
+    </div>
   </div>
 </nav>
 
 <div class="container-fluid">
-  <div class= "row">
-    <div class= "col-sm-2">
-    </div>
-    <div class="polaroid col-sm-8"> 
-      <figure ng-controller="RandomShowCtrl"> 
-        <img ng-src="{{post.picture}}">
+  <div class="row">
+    <div class="polaroid col-sm-6 col-sm-offset-3"> 
+      <figure> 
+        <img ng-src="{{post.picture}}" class="img-responsive">
         <figcaption>{{ post.user_id }}</figcaption> 
         <figcaption>{{ post.title }}</figcaption>
       </figure>
-      <div class= "col-sm-2">
-      </div>
     </div>
   </div>
-
+  
   <div class="row">
-    <div class="col-sm-2">
-    </div>
-    <div class="col-sm-8 yes-no-button">
-      <span><i class="fa fa-times-circle fa-align-center"></i>
-      <i class="fa fa-check-circle fa-align-center"></i></span>
-    </div>
-    <div class= "col-sm-2">
+    <div class="col-sm-6 yes-no-button col-sm-offset-3">
+      <span><button type="button" ng-click="cross()"><i class="fa fa-times-circle fa-align-center"></i></button>
+      <button type="button"><i class="fa fa-check-circle fa-align-center"></i></button></span>
     </div>
   </div>
 </div>

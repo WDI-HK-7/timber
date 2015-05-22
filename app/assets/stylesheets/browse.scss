@@ -12,6 +12,7 @@ figure, figcaption{
   padding:20px 10px;
   width:100%;
   overflow:hidden;
+  // height: 300px;
 }
 
 .polaroid figure{
@@ -32,6 +33,11 @@ figure, figcaption{
 
 .yes-no-button{
   text-align:center;
+}
+
+.yes-no-button button{
+  border:0;
+  background-color:white;
 }
 
 .fa{
