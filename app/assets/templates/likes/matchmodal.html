@@ -1,2 +1,10 @@
-<h1>hello</h1>
-
+<div class="modal-header">
+  <h3 class="modal-title">It's a match!</h3>
+</div>
+<div class="modal-body">
+  {{likes.owner_id}} also likes one of your items
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary viewMatches" ng-click="ok()">View All Matches</button>
+  <button class="btn btn-warning" ng-click="cancel()">Continue Browsing</button>
+</div>
