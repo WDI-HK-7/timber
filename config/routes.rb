@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   # get '/', to: 'controller_names#action_name'
   # root 'controller_names#action_name'
   root 'static_pages#index'
-  
-  get 'posts/random'        => 'posts#random'
-  get 'posts/user/:user_id' => 'posts#user_post'  
+  get 'posts/random(/:id)'  => 'posts#random'  
+  get 'posts/user'          => 'posts#user_post'  
+  post 'posts/:post_id/likes' => 'likes#create'
   resources :posts , except: [:new, :edit] 
   
   # Generates automatically
@@ -24,4 +24,8 @@ Rails.application.routes.draw do
   #       PATCH  /posts/:id(.:format)           posts#update
   #       PUT    /posts/:id(.:format)           posts#update
   #       DELETE /posts/:id(.:format)           posts#destroy
+
+  # Add:
+  # http://localhost:3000/users/12/likes
+  # http://localhost:3000/posts/20/likes
 end

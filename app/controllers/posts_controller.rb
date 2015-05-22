@@ -43,8 +43,8 @@ class PostsController < ApplicationController
   end
 
   def random
-    # binding.pry
-    @post = Post.find(Post.where.not(user_id: current_user.id).pluck(:id).sample)
+    params[:id] ||= 0
+    @post = Post.find(Post.where.not(user_id: current_user.id, id: params[:id]).pluck(:id).sample)
 
     if @post.nil?
       render :json => { message: "Cannot find post" }
@@ -53,9 +53,9 @@ class PostsController < ApplicationController
     render :show
   end
 
-  # Returns all the post from a certain user 
+  # Returns all the post from current user
   def user_post
-    @posts = Post.where(user_id: params[:user_id])
+    @posts = Post.where(user_id: current_user.id)
 
     if @posts.nil?
       render :json => {message: "Cannot find post" }

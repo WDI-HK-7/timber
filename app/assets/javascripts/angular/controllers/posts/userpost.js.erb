@@ -1,13 +1,25 @@
-app.controller('UserPostCtrl',['$scope', '$http', '$location', '$routeParams', function($scope, $http, $location, $routeParams) {
+// app.controller('UserPostCtrl',['$scope', '$http', '$location', '$routeParams', function($scope, $http, $location, $routeParams) {
+
+//   var url = "<%= ENV['URL'] %>" || "http://localhost:3000/";
+  
+//   console.log($routeParams.user_id);
+
+//   $http.get(url +'posts/'+ $routeParams.user_id).success(function(response){
+//     $scope.post = response;
+//   });
+
+
+// }]);
+
+app.controller('UserPostCtrl',['$scope', '$http', '$location', function($scope, $http, $location) {
 
   var url = "<%= ENV['URL'] %>" || "http://localhost:3000/";
-  
-  console.log($routeParams.user_id);
 
-  $http.get(url + $routeParams.user_id + 'posts').success(function(response){
-    $scope.post = response;
+  $http.get(url +'posts/user').success(function(response){
+    $scope.posts = response;
   });
 
 
 }]);
+
 
