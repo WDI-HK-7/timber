@@ -29,7 +29,12 @@ app.config(['$routeProvider', function($routeProvider){
   when('/mytrades', {
     templateUrl: "<%= asset_path('likes/mytrades.html') %>",
     controller: 'PostNewCtrl'
+  }).
+  when('/myprofile', {
+    templateUrl: "<%= asset_path('users/profile.html') %>",
+    controller: 'ProfileCtrl'
   })
+
 
   // when('/posts/:id', {
   //   templateUrl: "<%= asset_path('posts/show.html') %>",
