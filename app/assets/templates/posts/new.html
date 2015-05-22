@@ -11,18 +11,18 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/#/browse">Browse</a></li>
-        <li class="active"><a href="/#/myitems">My Items<span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="/#/browse">Browse<span class="sr-only">(current)</span></a></li>
+        <li><a href="/#/myitems">My Items</a></li>
         <li><a href="/#/mymatches">My Matches</a></li>
         <li><a href="/#/mytrades">My Trades</a></li>
         <li class="dropdown-menu-class">
           <div ng-controller="DropdownCtrl">
             <div class="btn-group" dropdown is-open="status.isopen">
               <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle ng-disabled="disabled">
-                Victoria Li <span class="caret"></span>
+                <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">View Profile</a></li>
+                <li><a href="/#/myprofile">View Profile</a></li>
                 <li class="divider"></li>
                 <li><a href="#" ng-controller="SignOutCtrl" ng-click="user.logout()"a href="#">Log Out</a></li>
               </ul>

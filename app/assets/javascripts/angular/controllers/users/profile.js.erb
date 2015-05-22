@@ -1,0 +1,20 @@
+app.controller('ProfileCtrl',['$scope', '$http', '$location', function($scope, $http, $location){
+  $scope.form = {};
+  $scope.user = {};
+
+  $scope.form.submit = function(){
+
+    var url = "<%= ENV['URL'] %>"||"http://localhost:3000/";
+    var data = {
+      user: $scope.user
+    };
+    $http.post(url+ "users", data).success(function(response){
+      console.log(response);
+      console.log("Profile what!");
+      $scope.users = response;
+
+    });
+  };
+
+
+}]);

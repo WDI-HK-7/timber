@@ -35,25 +35,31 @@
 </nav>
 
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="polaroid col-sm-6 col-sm-offset-3"> 
-      <figure> 
-        <img ng-src="{{post.picture}}" class="img-responsive">
-        <figcaption>{{ post.user_id }}</figcaption> 
-        <figcaption>{{ post.title }}</figcaption>
-      </figure>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="col-sm-6 yes-no-button col-sm-offset-3">
-      <button type="button" ng-click="cross()"><i class="fa fa-times-circle fa-align-center"></i></button>
-      <button type="button" ng-click="tick()"><i class="fa fa-check-circle fa-align-center"></i></button>
-    </div>
-  </div>
-</div>
+<div class="container">
+<h1> User Profile </h1>
 
-<div ng-controller="MatchModalCtrl">
-  <button class="btn btn-default" ng-click="open()">Open me!</button>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <form class = "signup-login" ng-controller="ProfileCtrl" ng-submit="form.submit()">
+
+         <h4>The below contact information will be passed to your match once there is a match. To update, please use the form below.</h4>
+        Email:                     {{ user.email }}        
+        <br> First name:                {{ current_user.firstname }}
+        <br> Whatsapp number:           {{ current_user.whatsappnum }}
+        <br> Preferred contact method:  {{ current_user.prefermethod }}
+        <br> Any other remarks:         {{ current_user.note }}
+
+          <input type="text" placeholder="First name" ng-model="user.firstname"><br>
+          <input type="text" placeholder="Whatsapp number" ng-model="user.whatsappnum"><br>
+          <input type="text" placeholder="Preferred contact method" ng-model="user.prefmethod"><br>
+          <input type="text" placeholder="Any other remarks (e.g. best time to contact you, preference for physical transaction location)" ng-model="user.note"><br>
+          <input type="submit">
+        </form>
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+  </div>
 </div>
+  
