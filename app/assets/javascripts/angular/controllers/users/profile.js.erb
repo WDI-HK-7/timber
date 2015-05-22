@@ -11,7 +11,7 @@ app.controller('ProfileCtrl',['$scope', '$http', '$location', function($scope, $
     $http.post(url+ "users", data).success(function(response){
       console.log(response);
       console.log("Profile what!");
-    $scope.users = response;
+      $scope.users = response;
 
     });
   };
