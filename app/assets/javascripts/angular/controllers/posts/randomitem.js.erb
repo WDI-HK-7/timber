@@ -1,4 +1,4 @@
-app.controller('RandomShowCtrl',['$scope', '$http', '$location', function($scope, $http, $location) {
+app.controller('RandomShowCtrl',['$scope', '$http', '$location', '$modal', function($scope, $http, $location, $modal) {
 
   var url = "<%= ENV['URL'] %>" || "http://localhost:3000/";
 
@@ -28,7 +28,35 @@ app.controller('RandomShowCtrl',['$scope', '$http', '$location', function($scope
     $http.post(newUrl).success(function(response){
       $scope.post = response;
       console.log(response);
+      if (response.message == "match"){
+        $scope.open();
+      }
+      else{
+        console.log("no match");
+      }
     });
+  };
+
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  var url = "<%= ENV['URL'] %>"||"http://localhost:3000/";
+
+  $scope.open = function (size) {
+    var modalInstance = $modal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: "<%= asset_path('likes/matchmodal.html') %>",
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+  };
+
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
   };
 
 }]);

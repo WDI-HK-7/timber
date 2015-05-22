@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'posts/random(/:id)'  => 'posts#random'  
   get 'posts/user'          => 'posts#user_post'  
   post 'posts/:post_id/likes' => 'likes#create'
+
   resources :posts , except: [:new, :edit] 
   
   # Generates automatically

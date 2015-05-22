@@ -1,4 +1,4 @@
-app.controller('PostNewCtrl',['$scope', '$http', '$location', 'Upload', function($scope, $http, $location, Upload) {
+app.controller('PostNewCtrl',['$scope', '$http', '$location', 'Upload', '$window', function($scope, $http, $location, Upload, $window) {
 
   $scope.form = {};
   $scope.post = {};
@@ -25,7 +25,7 @@ app.controller('PostNewCtrl',['$scope', '$http', '$location', 'Upload', function
       console.log(response);
       // $location.path('/myitems');
       // $state.reload();
-      // $window.location.reload();
+      $window.location.reload();
     })
   }
 
