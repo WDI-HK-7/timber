@@ -9,4 +9,6 @@ class LikesController < ApplicationController
 			render :json => {message: "error!"}
 		end
 	end
+
+	
 end
