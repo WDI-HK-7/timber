@@ -2,7 +2,7 @@ app.controller('StaticPagesCtrl',['$scope', '$http', '$location', function($scop
 
   var url = "<%= ENV['URL'] %>"||"http://localhost:3000/";
 
-  $http.get(url+'/authenticated').success(function(response){
+  $http.get(url+'authenticated').success(function(response){
     if (response===null) {
       console.log("not logged in");
     } else {
