@@ -34,6 +34,17 @@ app.controller('RandomShowCtrl',['$scope', '$http', '$location', '$modal', funct
       else{
         console.log("no match");
       }
+      
+      randUrl = url + 'posts/random';
+
+      if ($scope.post.id !== undefined) {
+        randUrl + '/' + $scope.post.id;
+      }
+
+      $http.get(randUrl).success(function(response){
+        $scope.post = response;
+        console.log(response);
+      });
     });
   };
 

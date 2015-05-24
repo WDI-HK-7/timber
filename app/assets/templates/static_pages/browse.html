@@ -13,14 +13,17 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="/#/browse">Browse<span class="sr-only">(current)</span></a></li>
         <li><a href="/#/myitems">My Items</a></li>
-        <li><a href="/#/mymatches">My Matches</a></li>
-        <li><a href="/#/mytrades">My Trades</a></li>
+        <!-- <li><a href="/#/mymatches">My Matches</a></li> -->
+        <li><a href="/#/mytrades">My Matches</a></li>
+        
         <li class="dropdown-menu-class">
           <div ng-controller="DropdownCtrl">
             <div class="btn-group" dropdown is-open="status.isopen">
+              
               <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle ng-disabled="disabled">
                 <span class="caret"></span>
               </button>
+              
               <ul class="dropdown-menu" role="menu">
                 <li><a href="/#/myprofile">View Profile</a></li>
                 <li class="divider"></li>
@@ -37,17 +40,19 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="polaroid col-sm-6 col-sm-offset-3"> 
+    <div class="polaroid col-xs-6 col-xs-offset-3"> 
       <figure> 
         <img ng-src="{{post.picture}}" class="img-responsive">
-        <figcaption>{{ post.user_id }}</figcaption> 
-        <figcaption>{{ post.title }}</figcaption>
+        <figcaption>Posted by User: {{ post.user_id }}</figcaption> 
+        <div class="biggerContent"> <figcaption>{{ post.title }}</figcaption></div>
+        <figcaption> {{ post.content }}</figcaption>
+
       </figure>
     </div>
   </div>
   
   <div class="row">
-    <div class="col-sm-6 yes-no-button col-sm-offset-3">
+    <div class="col-xs-6 yes-no-button col-xs-offset-3">
       <span><button type="button" ng-click="cross()"><i class="fa fa-times-circle fa-align-center"></i></button>
       <button type="button" ng-click="tick()"><i class="fa fa-check-circle fa-align-center"></i></button></span>
     </div>

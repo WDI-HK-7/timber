@@ -2,9 +2,9 @@
   <h3 class="modal-title">It's a match!</h3>
 </div>
 <div class="modal-body">
-  {{likes.owner_id}} also likes one of your items
+  Your item has been matched!
 </div>
 <div class="modal-footer">
   <button class="btn btn-primary viewMatches" ng-click="ok()">View All Matches</button>
-  <button class="btn btn-warning" ng-click="cancel()">Continue Browsing</button>
+  <button class="btn btn-warning" ng-click="cancel(); cross()">Continue Browsing</button>
 </div>
