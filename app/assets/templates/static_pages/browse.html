@@ -37,9 +37,9 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="polaroid col-sm-6 col-sm-offset-3"> 
+    <div class="polaroid col-sm-6 col-xs-10 col-lg-4 col-sm-offset-3 col-sm-offset-1 col-lg-offset-4"> 
       <figure> 
-        <img ng-src="{{post.picture}}" class="img-responsive">
+        <img ng-src="{{post.picture}}">
         <figcaption>{{ post.user_id }}</figcaption> 
         <figcaption>{{ post.title }}</figcaption>
       </figure>
@@ -47,7 +47,7 @@
   </div>
   
   <div class="row">
-    <div class="col-sm-6 yes-no-button col-sm-offset-3">
+    <div class="col-sm-6 col-xs-10 col-lg-4 yes-no-button col-sm-offset-3 col-xs-offset-1 col-lg-offset-4">
       <span><button type="button" ng-click="cross()"><i class="fa fa-times-circle fa-align-center"></i></button>
       <button type="button" ng-click="tick()"><i class="fa fa-check-circle fa-align-center"></i></button></span>
     </div>

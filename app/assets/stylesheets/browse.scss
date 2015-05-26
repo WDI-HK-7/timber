@@ -4,22 +4,39 @@
   margin-top: 8px;
 }
 
+@media (max-width: 480px) {
+  .polaroid{
+    width:500px;
+  }
+
+  .polaroid figure img {
+    width:380px;
+    height: 420px;
+  }
+}
+
 figure, figcaption{ 
   display:block;
 }
 
+figure img{
+  width:480px;
+  height:500px;
+  background-color: white;
+}
+
 .polaroid{
   padding:20px 10px;
-  width:100%;
-  overflow:hidden;
-  // height: 300px;
+  width:500px;
+  height:630px;
+  float:center;
 }
 
 .polaroid figure{
   position:relative;
-  width:100%; 
-  margin:20px 20px; 
-  padding: 10px 10px 30px 10px; 
+  width:500px;
+  height:600px;
+  padding: 10px 10px 100px 10px; 
   background: #eee6d8; 
   background: -webkit-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
   background: -moz-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
