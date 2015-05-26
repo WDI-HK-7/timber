@@ -10,12 +10,15 @@ Rails.application.routes.draw do
 
   # get '/', to: 'controller_names#action_name'
   # root 'controller_names#action_name'
+  
   root 'static_pages#index'
   get 'posts/random(/:id)'  => 'posts#random'  
   get 'posts/user'          => 'posts#user_post'  
   post 'posts/:post_id/likes' => 'likes#create'
 
   resources :posts , except: [:new, :edit] 
+  
+  get '/*path' => 'static_pages#index'
   
   # Generates automatically
   # ---------------------------------------------------------- 
